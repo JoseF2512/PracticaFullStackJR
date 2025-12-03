@@ -99,6 +99,7 @@ toggleForm() {
       this.resetForm(); 
       this.cargarProductos();
       this.submitting = false;
+       this.showForm = false;
       Swal.fire(
         'Éxito',
         isEdit ? 'Producto actualizado correctamente.' : 'Producto creado correctamente.',
