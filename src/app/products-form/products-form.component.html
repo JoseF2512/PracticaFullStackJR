@@ -1,0 +1,28 @@
+<h2>{{ editMode ? 'Editar Producto' : 'Crear Producto' }}</h2>
+
+<form [formGroup]="productForm" (ngSubmit)="submit()">
+
+  <label>Nombre:</label>
+  <input type="text" formControlName="nombre" required />
+
+  <label>Marca:</label>
+  <input type="text" formControlName="marca" />
+
+  <label>Categoría:</label>
+  <input type="text" formControlName="categoria" />
+
+  <label>Precio:</label>
+  <input type="number" formControlName="precio" />
+
+  <label>Existencias:</label>
+  <input type="number" formControlName="existencias" />
+
+  <label>
+    <input type="checkbox" formControlName="activo" />
+    Activo
+  </label>
+
+  <button type="submit">{{ editMode ? 'Actualizar' : 'Crear' }}</button>
+  <button type="button" (click)="resetForm()">Cancelar</button>
+
+</form>
