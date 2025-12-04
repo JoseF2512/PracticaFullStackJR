@@ -1,6 +1,8 @@
 // Entidad JPA
 package com.productos.demo;
 
+import java.math.BigDecimal;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 
@@ -27,7 +29,7 @@ public class Producto {
     private String categoria;
 
     @Positive(message = "El precio debe ser mayor que 0")
-    private Double precio;
+    private BigDecimal precio;
 
     @Min(value = 0, message = "Las existencias deben ser mayor o igual a 0")
     private Integer existencias;
@@ -38,7 +40,7 @@ public class Producto {
     public Producto() {}
 
     // Constructor con todos los campos excepto id
-    public Producto(String nombre, String marca, String categoria, Double precio, Integer existencias, Boolean activo) {
+    public Producto(String nombre, String marca, String categoria, BigDecimal precio, Integer existencias, Boolean activo) {
         this.nombre = nombre;
         this.marca = marca;
         this.categoria = categoria;
@@ -60,8 +62,8 @@ public class Producto {
     public String getCategoria() { return categoria; }
     public void setCategoria(String categoria) { this.categoria = categoria; }
 
-    public Double getPrecio() { return precio; }
-    public void setPrecio(Double precio) { this.precio = precio; }
+    public BigDecimal getPrecio() { return precio; }
+    public void setPrecio(BigDecimal precio) { this.precio = precio; }
 
     public Integer getExistencias() { return existencias; }
     public void setExistencias(Integer existencias) { this.existencias = existencias; }

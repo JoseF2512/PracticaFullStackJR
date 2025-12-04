@@ -3,6 +3,7 @@ package com.productos.demo;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,7 +22,7 @@ public class ProductoService {
         if (productoRepository.existsByNombre(producto.getNombre())) {
             throw new IllegalArgumentException("Ya existe un producto con este nombre");
         }
-        if (producto.getPrecio() == null || producto.getPrecio() <= 0) {
+        if (producto.getPrecio() == null || producto.getPrecio().compareTo(BigDecimal.ZERO) <= 0) {
             throw new IllegalArgumentException("El precio debe ser mayor que 0");
         }
         if (producto.getExistencias() == null || producto.getExistencias() < 0) {
@@ -53,7 +54,8 @@ public class ProductoService {
                 && productoRepository.existsByNombre(productoActualizado.getNombre())) {
             throw new IllegalArgumentException("Ya existe un producto con este nombre");
         }
-        if (productoActualizado.getPrecio() == null || productoActualizado.getPrecio() <= 0) {
+        if (productoActualizado.getPrecio() == null
+                || productoActualizado.getPrecio().compareTo(BigDecimal.ZERO) <= 0) {
             throw new IllegalArgumentException("El precio debe ser mayor que 0");
         }
         if (productoActualizado.getExistencias() == null || productoActualizado.getExistencias() < 0) {
