@@ -20,7 +20,10 @@ export class LoginComponent implements OnInit {
   user: LoginUser = { email: '', password: '' };
   errorMessage: string = '';
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+  private readonly authService: AuthService,
+  private readonly router: Router
+) {}
 
   ngOnInit() {
     this.authService.currentUser.subscribe(user => {
@@ -34,10 +37,11 @@ export class LoginComponent implements OnInit {
   try {
     await this.authService.login(this.user.email, this.user.password);
     this.errorMessage = '';
-    this.router.navigate(['/products']); // solo al iniciar sesión correcto
+    this.router.navigate(['/products']); 
   } catch (err) {
-    this.errorMessage = "Correo o contraseña incorrectos.";
-  }
+  console.error('Error en el login:', err); 
+  this.errorMessage = "Correo o contraseña incorrectos.";
+}
 
 
     try {

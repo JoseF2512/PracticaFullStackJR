@@ -24,7 +24,7 @@ export class ProductsComponent implements OnInit {
   loading: boolean = false;
   submitting: boolean = false;
 
-  constructor(private fb: FormBuilder, private productService: ServiceProductsService) {
+  constructor(private readonly fb: FormBuilder, private readonly productService: ServiceProductsService) {
     this.productForm = this.fb.group({
       nombre: ['', Validators.required],
       marca: [''],
@@ -45,7 +45,7 @@ export class ProductsComponent implements OnInit {
 toggleForm() {
   this.showForm = !this.showForm;
   if (!this.showForm) {
-    this.resetForm(); // opcional: resetear al cerrar
+    this.resetForm(); 
   }
 }
   cargarProductos() {
@@ -65,15 +65,13 @@ toggleForm() {
   }
 
   filtrarProductos() {
-    if (!this.filtroNombre) {
-      this.productosFiltrados = [...this.productos];
-    } else {
-      const filtro = this.filtroNombre.toLowerCase();
-      this.productosFiltrados = this.productos.filter(p =>
-        p.nombre.toLowerCase().includes(filtro)
-      );
-    }
-  }
+  const filtro = this.filtroNombre?.toLowerCase() ?? '';
+
+  this.productosFiltrados = this.productos.filter(p =>
+    p.nombre.toLowerCase().includes(filtro)
+  );
+}
+
 
   editarProducto(product: any) {
     this.showForm = true; 

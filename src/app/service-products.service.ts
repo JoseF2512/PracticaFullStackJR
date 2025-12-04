@@ -7,9 +7,9 @@ import { Observable } from 'rxjs';
 })
 export class ServiceProductsService {
 
-  private apiUrl = 'http://localhost:8080/productos'; 
+  private readonly apiUrl = 'http://localhost:8080/productos'; 
 
-  constructor(private http: HttpClient) {}
+  constructor(private readonly http: HttpClient) {}
 
   // Obtener todos los productos
   getProducts(): Observable<any[]> {
