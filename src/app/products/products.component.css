@@ -1,6 +1,4 @@
-/* ===================== */
 /* CONTENEDOR GENERAL */
-/* ===================== */
 .container {
   max-width: 800px;
   margin: 2rem auto;
@@ -9,9 +7,8 @@
   color: #1f2937;
 }
 
-/* ===================== */
+
 /* TITULO */
-/* ===================== */
 h2 {
   text-align: center;
   margin-bottom: 2rem;
@@ -19,9 +16,8 @@ h2 {
   font-weight: 700;
 }
 
-/* ===================== */
+
 /* BOTÓN PRINCIPAL */
-/* ===================== */
 button.toggle-btn {
   display: block;
   margin: 0 auto 1.5rem;
@@ -39,9 +35,8 @@ button.toggle-btn:hover {
   transform: scale(1.05);
 }
 
-/* ===================== */
+
 /* FORMULARIO PRODUCTOS */
-/* ===================== */
 .product-form {
   background: white;
   padding: 2rem;
@@ -111,9 +106,8 @@ button.toggle-btn:hover {
   transform: scale(1.03);
 }
 
-/* ===================== */
+
 /* FILTRO */
-/* ===================== */
 .filtro {
   width: 100%;
   max-width: 500px;
@@ -130,9 +124,8 @@ button.toggle-btn:hover {
   outline: none;
 }
 
-/* ===================== */
+
 /* TABLA PRODUCTOS */
-/* ===================== */
 .product-table {
   width: 100%;
   border-collapse: collapse;
@@ -161,6 +154,39 @@ button.toggle-btn:hover {
   font-weight: bold;
 }
 
-.product-table button {
-  margin-right: 5px;
+.product-table td.actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.product-table td .action-btn {
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+/* Botón editar */
+.product-table td .edit-btn {
+  background: #3b82f6;
+  color: white;
+}
+
+.product-table td .edit-btn:hover {
+  background: #2563eb;
+  transform: scale(1.05);
+}
+
+/* Botón activar/desactivar */
+.product-table td .state-btn {
+  background: #f97316;
+  color: white;
+}
+
+.product-table td .state-btn:hover {
+  background: #ea580c;
+  transform: scale(1.05);
 }
