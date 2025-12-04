@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ServiceProductsService } from '../service-products.service'; 
@@ -9,33 +9,30 @@ import { ServiceProductsService } from '../service-products.service';
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './products-form.component.html'
 })
-export class ProductsFormComponent implements OnInit {
+export class ProductsFormComponent {
 
   productForm: FormGroup;
-  editMode: boolean = false; // false = crear, true = editar
+  editMode: boolean = false; 
   productId: number | null = null;
 
-  constructor(private fb: FormBuilder, private productService: ServiceProductsService) {
+    constructor(private readonly fb: FormBuilder, private readonly productService: ServiceProductsService) {
     this.productForm = this.fb.group({
       nombre: ['', Validators.required],
       marca: [''],
       categoria: [''],
-      precio: [0, Validators.required],
-      existencias: [0, Validators.required],
+      precio: [null, Validators.required],
+      existencias: [null, Validators.required],
       activo: [true]
     });
   }
 
-  ngOnInit(): void {}
-
-  // Cargar producto para editar
   loadProduct(product: any) {
     this.editMode = true;
     this.productId = product.id;
     this.productForm.patchValue(product);
   }
 
-  // Guardar producto
+ 
   submit() {
     if (this.productForm.invalid) return;
 
