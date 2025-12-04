@@ -1,70 +1,95 @@
-/* Fondo y centrado total */
+/* Fondo con degradado suave */
 .login-container {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
   padding: 20px;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Caja del formulario */
 .login-box {
-  background-color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   width: 100%;
   max-width: 400px;
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  padding: 2.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 /* Título */
 .login-box h4 {
-  font-weight: 600;
-  color: #2a5298;
+  font-weight: 700;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
 }
 
 /* Labels */
 .form-label {
   font-weight: 500;
-  color: #333;
+  color: #000000;
+  margin-bottom: 0.5rem;
+  display: block;
 }
 
-/* Inputs */
+/* Inputs estilo moderno */
 .form-control {
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  border-radius: 12px;
+  border: none;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  color: #000000;
+  transition: all 0.3s;
+}
+
+.form-control::placeholder {
+  color: rgba(255,255,255,0.7);
 }
 
 .form-control:focus {
-  border-color: #2a5298;
-  box-shadow: 0 0 5px rgba(42, 82, 152, 0.4);
+  outline: none;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-/* Botón */
+/* Botón moderno */
 .btn-login {
-  background-color: #2a5298;
-  color: #fff;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  color: #000000;
   font-weight: 600;
-  border-radius: 10px;
-  transition: background-color 0.3s, transform 0.2s;
+  border-radius: 12px;
+  padding: 0.75rem;
+  width: 100%;
+  transition: all 0.3s;
 }
 
 .btn-login:hover {
-  background-color: #1e3c72;
-  transform: translateY(-1px);
+  background: linear-gradient(135deg, #ff4e7c, #ff6aa3);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
 /* Alerta de error */
 .alert {
-  border-radius: 10px;
+  border-radius: 12px;
   font-size: 0.9rem;
+  background: rgba(255, 0, 0, 0.1);
+  color: #000000;
+  text-align: center;
 }
 
 /* Responsivo */
 @media (max-width: 480px) {
   .login-box {
-    padding: 1.5rem;
+    padding: 2rem;
   }
 }
