@@ -1,0 +1,7 @@
+com\productos\demo\config\CorsConfig.class
+com\productos\demo\config\CorsConfig$1.class
+com\productos\demo\ProductoService.class
+com\productos\demo\controller\ProductoController.class
+com\productos\demo\DemoApplication.class
+com\productos\demo\Producto.class
+com\productos\demo\ProductoRepository.class
