@@ -194,3 +194,4 @@ CSS modular por componente.
 
 Se realizo la prueba en SonarQube con resultados positivos y los esperados.
 comparto evidencia: ![prueba](image.png)
+
